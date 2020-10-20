@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+    <div class="col-sm">
+      <h3>Tem certeza que deseja excluir {{ produto.nome }}?</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit">sim</button>
+            <a href="{% url 'lista' %}"><button type="button">não</button></a>
+        </form>
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
